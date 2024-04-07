@@ -16,7 +16,10 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.x'  # Specify the Flutter version (e.g., 2.10.3)
+          flutter-version: '3.19.4'  # Specify the Flutter version (e.g., 2.10.3)
+
+      - name: Navigate to Flutter project directory
+        run: cd frontend/crop_final_app  # Change directory to your Flutter project
 
       - name: Install dependencies
         run: flutter pub get  # Install Flutter dependencies
