@@ -1,21 +1,17 @@
-name: Flutter Build
+name: Print Message
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: macos-latest
+  print:
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '2.10.3' # Update with your Flutter version
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build Flutter app
-        run: flutter build apk --release
+      - name: Print a message
+        run: echo "Hello, CI/CD! This is a test message."
